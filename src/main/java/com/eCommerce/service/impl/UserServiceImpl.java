@@ -4,12 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.eCommerce.repository.PasswordResetTokenRepository;
+import com.eCommerce.repository.UserRepository;
 import com.eCommerce.domain.User;
 import com.eCommerce.domain.security.PasswordResetToken;
 import com.eCommerce.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Autowired
 	private PasswordResetTokenRepository passwordResetTokenRepository;
@@ -24,5 +28,15 @@ public class UserServiceImpl implements UserService{
 		final PasswordResetToken myToken = new PasswordResetToken(token, user);
 		passwordResetTokenRepository.save(myToken);
 	}
+	
+	@Override
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
+	
+	public User findByEmail (String email) {
+		return userRepository.findByEmail(email);
+	}
+
 
 }
