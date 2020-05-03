@@ -5,3 +5,4 @@ Complete E-Commerce Project using Spring, Hibernate &amp; MySQL
 
 1. Home Page.
 2. My account.
+3. Admin Panel.
