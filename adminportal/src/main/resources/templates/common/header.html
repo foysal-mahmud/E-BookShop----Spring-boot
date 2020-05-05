@@ -18,6 +18,92 @@
 
 <body>
 	<div th:fragment="navbar">
+	
+	<style>.navbar-default {
+        background-color: #a32222;
+        border-color: #293872;
+    }
+
+    .navbar-default .navbar-brand {
+        color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-brand:focus {
+        color: #f8f9f8;
+    }
+
+    .navbar-default .navbar-text {
+        color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+        color: #f8f9f8;
+    }
+
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #f8f9f8;
+        background-color: #293872;
+    }
+
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #f8f9f8;
+        background-color: #293872;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: #293872;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+        background-color: #293872;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-link {
+        color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-link:hover {
+        color: #f8f9f8;
+    }
+
+    @media (max-width: 767px) {
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+            color: #ecf0f1;
+        }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #f8f9f8;
+        }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #f8f9f8;
+            background-color: #293872;
+        }
+    }</style>
+    
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -35,15 +121,15 @@
 					<ul class="nav navbar-nav">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Products <span class="caret"></span></a>
+							aria-expanded="false">Books <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Add a new product</a></li>
-								<li><a href="#">View product list</a></li>
+								<li><a href="#">Add a new Book</a></li>
+								<li><a href="#">View Book list</a></li>
 							</ul></li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Sign out</a></li>
+						<li><a th:href="@{/logout}">Sign out</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
