@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+	
+	<div class="container">
+		<div class="table-responsive">
+			<table id="bookListTable" class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Category</th>
+						<th>List Price</th>
+						<th>Our Price</th>
+						<th>Active?</th>
+						<th>Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-th-each="book : ${bookList}">
+						<!-- <td><input hidden="hidden" name="id" th:value="${book.id}" /></td> -->
+						<td th:text="${book.title}"></td>
+						<td th:text="${book.author}"></td>
+						<td th:text="${book.category}"></td>
+						<td th:text="${book.listPrice}"></td>
+						<td th:text="${book.ourPrice}"></td>
+						<td th:text="${book.active}"></td>
+						<td>delete</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	
+	</div>
+	
+	
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>
