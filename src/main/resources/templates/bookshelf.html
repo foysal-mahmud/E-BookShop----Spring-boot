@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div th:replace="common/header :: navbar"/>
+
+<div class="container">
+    <div class="row" style="margin-bottom: -100px;">
+        <div class="col-xs-8">
+            <h2 class="section-headline">
+                <h2 class="section-headline">
+                    <span th:text="${user}? ${#strings.toUpperCase(user.username)} : 'All Books'"></span>
+                </h2>
+            </h2>
+        </div>
+        <div class="col-xs-4">
+            <img src="/image/logo.png" class="img-responsive"/>
+        </div>
+    </div>
+    <hr
+            style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;"/>
+    <img class="img-responsive" src="/image/wood.png"
+         style="margin-top: -75px;"/>
+
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-xs-9 col-xs-offset-3">
+			<div th:if="${emptyList}">
+				<h5 style="font-style: italic;">Oops, no result is found. Try something else or try again later.</h5>
+			</div>
+			
+			<table border="0" id="bookList">
+				<thead><tr><th></th></tr></thead>
+				<tbody>
+				<tr class="book-item" data-th-each="book : ${bookList}">
+					<td>
+						<div th:if="${book != null}">
+							<div class="row">
+								<div class="col-xs-3">
+									<img class="img-responsive shelf-book" th:src="#{adminPath}+@{/image/book}+${book.id}+'.png'"/>
+								</div>
+								<div class="col-xs-9">
+									<h4 th:text="${book.title}"></h4>
+									<span th:text="${book.publicationDate}"></span>
+									<span th:text="book.author"></span>
+									<span th:text="${#strings.capitalize(book.format)}"></span>
+									<span th:text="${book.numberOfPages}"><span> pages</span></span>
+									<span style="font-size:x-large;color:#db3208;">$<span
+									th:text="${#numbers.formatDecimal(book.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
+									
+									<span style="text-decoration: line-through;">$<span
+									th:text="${#numbers.formatDecimal(book.listPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
+									
+									<p th:text="${#strings.abbreviate(book.description, 500)}"></p>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+            
+
+            
+
+
+            
+        </div>
+    </div>
+</div>
+<!-- end of container -->
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+</html>
