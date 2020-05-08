@@ -37,16 +37,16 @@
 						<div th:if="${book != null}">
 							<div class="row">
 								<div class="col-xs-3">
-									<img class="img-responsive shelf-book" th:src="#{adminPath}+@{/image/book}+${book.id}+'.png'"/>
+									<a th:href="@{/bookDetail?id=}+${book.id}"><img class="img-responsive shelf-book" th:src="#{adminPath}+@{/image/book/}+${book.id}+'.png'"/></a>
 								</div>
 								<div class="col-xs-9">
-									<h4 th:text="${book.title}"></h4>
+									<a th:href="@{/bookDetail?id=}+${book.id}"><h4 th:text="${book.title}"></h4></a>
 									<span th:text="${book.publicationDate}"></span>
-									<span th:text="book.author"></span>
-									<span th:text="${#strings.capitalize(book.format)}"></span>
+									<p th:text="${book.author}"></p>
+									<a th:href="@{/bookDetail?id=}+${book.id}"><span th:text="${#strings.capitalize(book.format)}"></span></a>
 									<span th:text="${book.numberOfPages}"><span> pages</span></span>
-									<span style="font-size:x-large;color:#db3208;">$<span
-									th:text="${#numbers.formatDecimal(book.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
+									<a th:href="@{/bookDetail?id=}+${book.id}"><span style="font-size:x-large;color:#db3208;">$<span
+									th:text="${#numbers.formatDecimal(book.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span></a>
 									
 									<span style="text-decoration: line-through;">$<span
 									th:text="${#numbers.formatDecimal(book.listPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
@@ -59,12 +59,7 @@
 				</tr>
 				</tbody>
 			</table>
-            
-
-            
-
-
-            
+         
         </div>
     </div>
 </div>
