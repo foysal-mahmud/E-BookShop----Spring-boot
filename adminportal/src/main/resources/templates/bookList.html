@@ -23,7 +23,7 @@
 				<tbody>
 					<tr data-th-each="book : ${bookList}">
 						<!-- <td><input hidden="hidden" name="id" th:value="${book.id}" /></td> -->
-						<td th:text="${book.title}"></td>
+						<td><a th:href="@{/book/bookInfo(id=${book.id})}"><span th:text="${book.title}"></span></a></td>
 						<td th:text="${book.author}"></td>
 						<td th:text="${book.category}"></td>
 						<td th:text="${book.listPrice}"></td>
@@ -39,5 +39,15 @@
 	
 	
 	<div th:replace="common/header :: body-bottom-scripts" />
+	
+	<script>
+		$(document).ready(function() {
+			$("#bookListTable").DataTable({
+				"lengthMenu": [ [5,10,15,20,-1],[5,10,15,20,"All"] ],
+				"ordering": false,
+				stateSave: true
+			});
+		});
+	</script>
 </body>
 </html>
