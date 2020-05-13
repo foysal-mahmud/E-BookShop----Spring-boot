@@ -44,14 +44,15 @@
 									<span th:text="${book.publicationDate}"></span>
 									<p th:text="${book.author}"></p>
 									<a th:href="@{/bookDetail?id=}+${book.id}"><span th:text="${#strings.capitalize(book.format)}"></span></a>
-									<span th:text="${book.numberOfPages}"><span> pages</span></span>
+									<span th:text="${book.numberOfPages}"><span> pages</span></span> <br/>
+									
 									<a th:href="@{/bookDetail?id=}+${book.id}"><span style="font-size:x-large;color:#db3208;">$<span
 									th:text="${#numbers.formatDecimal(book.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span></a>
 									
 									<span style="text-decoration: line-through;">$<span
 									th:text="${#numbers.formatDecimal(book.listPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
 									
-									<p th:text="${#strings.abbreviate(book.description, 500)}"></p>
+									<p th:utext="${#strings.abbreviate(book.description, 1000)}"></p>
 								</div>
 							</div>
 						</div>
