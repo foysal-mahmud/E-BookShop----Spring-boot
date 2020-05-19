@@ -9,3 +9,4 @@ Complete E-Commerce Project using Spring, Hibernate &amp; MySQL
 4. Item list add, view, edit
 5. Payment & Shipping feature
 6. Shopping Cart
+7. Check out Product
