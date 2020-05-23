@@ -17,4 +17,6 @@ public interface CartItemService {
 	CartItem findById(Long id);
 	
 	void removeCartItem(CartItem cartItem);
+	
+	CartItem save(CartItem cartItem);
 }
