@@ -28,12 +28,14 @@
     	<input hidden="hidden" th:field="*{book.id}" />
     	<div class="row" style="margin-top: 120px;">
     		<div class="col-xs-3">
-    			<strong><i><a th:href="@{/bookshelf}">Back to book list</a></i></strong><br/><br/>
+    			<h4><a th:href="@{/bookshelf}">Back to book list</a></h4><br/>
     			<img class="img-responsive shelf-book" th:src="#{adminPath}+@{/image/book/}+${book.id}+'.png'" />
     		</div>
     		
     		<div class="col-xs-9">
-    			<h3 th:text="${book.title}">Book Title</h3>
+    			<h3><span th:if="${addBookSuccess}" style="color: forestgreen"><i class="fa fa-check" aria-hidden="true" style="color: forestgreen"></i>Added to cart.</span></h3>
+    			<h3><span th:if="${notEnoughStock}" style="color: red">Oops, only <span th:text="${book.inStockNumber}"></span> In Stock.</span></h3>
+    			<h3 th:text="${book.title}" style="color: red; font-family: cursive"  >Book Title</h3>
     			<div class="row">
     				<div class="col-xs-5">
     					<h5><strong>Author: </strong><span th:text="${book.author}"></span></h5>
@@ -62,7 +64,7 @@
     								</div>
     								<div class="col-xs-6">
     									<h4 th:if="*{book.inStockNumber&gt;10}" style="color: green">In Stock</h4>
-    									<h4 th:if="*{book.inStockNumber&lt;10 and book.inStockNumber&gt;0}" style="color: green">Only <span th:text="${book.inStockNumber}"> In Stock</span></h4>
+    									<h4 th:if="*{book.inStockNumber&lt;10 and book.inStockNumber&gt;0}" style="color: green">Only <span th:text="${book.inStockNumber}"> </span> In Stock</h4>
     									<h4 th:if="*{book.inStockNumber==0}" style="color:darkred;">Unavailable</h4>
     									<button type="submit" class="btn btn-warning" style="color:black;border:1px solid black; padding: 10px 40px 10px 40px;">Add to Cart</button>
     								</div>
@@ -73,6 +75,7 @@
     			</div>
     			
     			<hr/>
+    			<h3>Description:</h3>
     			<p th:utext="${book.description}"></p>
     		</div>
     	</div>
