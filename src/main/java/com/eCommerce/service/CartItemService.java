@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.eCommerce.domain.Book;
 import com.eCommerce.domain.CartItem;
+import com.eCommerce.domain.Order;
 import com.eCommerce.domain.ShoppingCart;
 import com.eCommerce.domain.User;
 
@@ -19,4 +20,6 @@ public interface CartItemService {
 	void removeCartItem(CartItem cartItem);
 	
 	CartItem save(CartItem cartItem);
+	
+	List<CartItem> findByOrder(Order order);
 }
