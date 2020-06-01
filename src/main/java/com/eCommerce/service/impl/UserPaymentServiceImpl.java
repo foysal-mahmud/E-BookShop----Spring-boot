@@ -18,7 +18,7 @@ public class UserPaymentServiceImpl implements UserPaymentService{
 		return userPaymentRepository.findById(id).orElse(null);
 	}
 	
-	public void deteteById(Long id) {
+	public void deleteById(Long id) {
 		userPaymentRepository.deleteById(id);
 	}
 } 
