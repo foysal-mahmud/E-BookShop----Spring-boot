@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row banner">
+			<!-- carousel -->
+			<div class="col-xs-8">
+				<div class="panel panel-default" style="margin-top: 20px;">
+					<div class="panel-body">
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="/image/bank.jpg" class="img-responsive" />
+									<div class="carousel-caption">
+										<h4>Foysal Mahmud</h4>
+										<p>Studied at Computer Science and Engineering, University of Barisal. </p>
+									</div>
+								</div>
+								<div class="item">
+									<img src="/image/library3.jpg" class="img-responsive" />
+									<div class="carousel-caption">
+										<h4>Foysal Mahmud</h4>
+										<p>Studied at Computer Science and Engineering, University of Barisal.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img src="/image/bank.jpg" class="img-responsive" />
+									<div class="carousel-caption">
+										<h4>Foysal Mahmud</h4>
+										<p>Studied at Computer Science and Engineering, University of Barisal.</p>
+									</div>
+								</div>
+								...
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic" role="button"
+								data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+									aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a> <a class="right carousel-control" href="#carousel-example-generic" role="button"
+								data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span
+									class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-4">
+				<img src="/image/logo.png" class="img-responsive" />
+				<img src="/image/web-dev.jpg" class="img-responsive" />
+			</div>
+			
+		</div>
+
+		<hr /> <!-- Horizontal Line -->
+
+
+
+		<div class="row">
+
+			<!-- Three images add side by side -->
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/searchByCategory(category='Programming')}"><img src="/image/programmingBook.png" class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/bookshelf}"><img src="/image/library.png" class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/faq}"><img src="/image/faq.png" class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+<br/>
+		<div>
+			<div class="home-headline"> <span>Best Seller Books</span></div>
+			<hr style="margin-top: -15px;" />
+		</div>
+
+
+		<div class="row">
+			<div id="top-product" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#featured-books" data-slide-to="0" class="active"></li>
+					<li data-target="#featured-books" data-slide-to="1"></li>
+					<li data-target="#featured-books" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=46}"><img class="img-responsive" src="/image/book1.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=49}"><img class="img-responsive" src="/image/book2.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=152}"><img class="img-responsive" src="/image/book3.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=50}"><img class="img-responsive" src="/image/book4.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=153}"><img class="img-responsive" src="/image/book5.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=48}"><img class="img-responsive" src="/image/book6.png" /></a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=46}"><img class="img-responsive" src="/image/book1.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=49}"><img class="img-responsive" src="/image/book2.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=153}"><img class="img-responsive" src="/image/book5.png" /></a>
+								</div>
+								
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=50}"><img class="img-responsive" src="/image/book4.png" /></a>
+								</div>
+								
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=48}"><img class="img-responsive" src="/image/book6.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=152}"><img class="img-responsive" src="/image/book3.png" /></a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=46}"><img class="img-responsive" src="/image/book1.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=49}"><img class="img-responsive" src="/image/book2.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=152}"><img class="img-responsive" src="/image/book3.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=50}"><img class="img-responsive" src="/image/book4.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=153}"><img class="img-responsive" src="/image/book5.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/bookDetail?id=48}"><img class="img-responsive" src="/image/book6.png" /></a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" 
+					role="button" data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" 
+					role="button" data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer"/>
+	
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+
+</html>
