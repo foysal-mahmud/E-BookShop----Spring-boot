@@ -1,10 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
-<head th:replace="common/header :: common-header" />
+<head th:replace="common/header :: common-header">
+
+</head>
 
 <body>
 	<div th:replace="common/header :: navbar" />
+	
+	<h1 style="text-align:center; margin-top  : 30px;"> <strong>Admin Portal</strong></h1>
+
+<br/><br/>
+<hr/>
+   <div style="text-align:center; margin-top  : 40px;">
+	<a th:href="@{/book/add}"><button
+			style="background-color: #4CAF50; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 36px;">Add New Book </button></a>
+
+	</div>
+	
+	<div style="text-align:center; margin-top  : 40px;">
+	<a th:href="@{/book/bookList}"><button
+			style="background-color: red; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 36px;">View Book List</button></a>
+
+	</div>
+<hr/>
+
+
+
 
 	<div th:replace="common/header :: body-bottom-scripts" />
 </body>
