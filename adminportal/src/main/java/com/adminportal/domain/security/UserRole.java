@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 import com.adminportal.domain.User;
 
-
 @Entity
 @Table(name="user_role")
 public class UserRole {
