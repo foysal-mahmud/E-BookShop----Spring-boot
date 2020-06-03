@@ -10,7 +10,7 @@
 		<div>
 			<ol class="breadcrumb">
 				<li><a th:href="@{/book/bookList}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Go back</a></li>
-				<li><a th:href="@{/book/updateBook?id=}+${book.id}">Edit</a></li>
+				<li><strong><a th:href="@{/book/updateBook?id=}+${book.id}" class="fa fa-pencil" style="color: green"> Edit</a></strong></li>
 			</ol>
 			
 		</div>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="col-xs-9">
-				<h3 th:text="${book.title}"></h3>
+				<h3 th:text="${book.title}" style="color: red; font-family: cursive"></h3><br/>
 				<div class="row">
 					<div class="col-xs-6">
 						<p><strong>Author: </strong><span th:text="${book.author}"></span></p>
@@ -43,8 +43,9 @@
 						<p><strong>Number in Stock: </strong><span th:text="${book.inStockNumber}"></span></p>
 					</div>
 				</div>
-				
+				<hr/>
 				<p><Strong>Description: </Strong><span th:utext="${book.description}"></span></p>
+				<br/><hr/>
 			</div>
 			
 		</div>
