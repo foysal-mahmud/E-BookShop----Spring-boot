@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>E-Commerce</title>
+<title>E-Commerce Admin</title>
 
 <!-- Bootstrap core CSS -->
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
@@ -13,13 +13,14 @@
 <!-- Custom styles for this template -->
 <link th:href="@{/css/style.css}" rel="stylesheet" />
 
-<!-- Description Style -->
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
-
 <!-- data table -->
 <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
 <link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
 
 <link rel="icon" href="/image/applie-touch-icon.png" />
 </head>
@@ -147,6 +148,8 @@
 	<div th:fragment="body-bottom-scripts">
 		<script th:src="@{/js/jquery.min.js}"></script>
 		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/bootbox.min.js}"></script>
+		<script th:src="@{/js/scripts.js}"></script>
 		
 		<!-- data table -->
 		<script th:src="@{/js/jquery.dataTables.min.js}"></script>
