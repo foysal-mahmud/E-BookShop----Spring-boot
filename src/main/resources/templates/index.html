@@ -6,9 +6,10 @@
 <body>
 	<div th:replace="common/header :: navbar" />
 
-	<div class="container">
+<!-- start of container -->
+	<div class="container"> 
 		<div class="row banner">
-			<!-- carousel -->
+			<!-- carousel effect-->
 			<div class="col-xs-8">
 				<div class="panel panel-default" style="margin-top: 20px;">
 					<div class="panel-body">
@@ -43,7 +44,7 @@
 										<p>Studied at Computer Science and Engineering, University of Barisal.</p>
 									</div>
 								</div>
-								...
+								
 							</div>
 
 							<!-- Controls -->
@@ -61,6 +62,7 @@
 				</div>
 			</div>
 			
+			<!-- logo here -->
 			<div class="col-xs-4">
 				<img src="/image/logo.png" class="img-responsive" />
 				<img src="/image/web-dev.jpg" class="img-responsive" />
@@ -70,11 +72,11 @@
 
 		<hr /> <!-- Horizontal Line -->
 
-
+<!-- ----------------------------------------------------------------------------------------- -->
 
 		<div class="row">
 
-			<!-- Three images add side by side -->
+			<!-- Three images with links -->
 			<div class="col-xs-4">
 				<div class="panel panel-default">
 					<div class="panel-body">
@@ -99,10 +101,10 @@
 				</div>
 			</div>
 
-
 		</div>
 
 <br/>
+<!-- ----------------------------------------------------------------------------------------- -->
 		<div>
 			<div class="home-headline"> <span>Best Seller Books</span></div>
 			<hr style="margin-top: -15px;" />
@@ -113,9 +115,9 @@
 			<div id="top-product" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
-					<li data-target="#featured-books" data-slide-to="0" class="active"></li>
-					<li data-target="#featured-books" data-slide-to="1"></li>
-					<li data-target="#featured-books" data-slide-to="2"></li>
+					<li data-target="#top-product" data-slide-to="0" class="active"></li>
+					<li data-target="#top-product" data-slide-to="1"></li>
+					<li data-target="#top-product" data-slide-to="2"></li>
 				</ol>
 
 				<!-- Wrapper for slides -->
@@ -204,17 +206,18 @@
 				</div>
 
 				<!-- Controls -->
-				<a class="left carousel-control" 
+				<a class="left carousel-control" href="#top-product"
 					role="button" data-slide="prev"> <span
 					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" 
+				</a> <a class="right carousel-control" href="#top-product"
 					role="button" data-slide="next"> <span
 					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
 		</div>
+<!-- ----------------------------------------------------------------------------------------- -->
 
 	</div>
 	<!-- end of container -->
