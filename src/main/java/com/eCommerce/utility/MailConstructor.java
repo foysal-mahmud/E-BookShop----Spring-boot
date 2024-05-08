@@ -1,10 +1,9 @@
 package com.eCommerce.utility;
 
-import java.util.Locale;
-
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
+import com.eCommerce.domain.Order;
+import com.eCommerce.domain.User;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.SimpleMailMessage;
@@ -14,8 +13,7 @@ import org.springframework.stereotype.Component;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import com.eCommerce.domain.Order;
-import com.eCommerce.domain.User;
+import java.util.Locale;
 
 
 @Component
