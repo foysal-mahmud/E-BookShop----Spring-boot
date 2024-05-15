@@ -1,32 +1,5 @@
 package com.eCommerce.controller;
 
-import java.security.Principal;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.websocket.server.PathParam;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.eCommerce.domain.Book;
 import com.eCommerce.domain.CartItem;
 import com.eCommerce.domain.Order;
@@ -47,6 +20,31 @@ import com.eCommerce.service.impl.UserSecurityService;
 import com.eCommerce.utility.MailConstructor;
 import com.eCommerce.utility.SecurityUtility;
 import com.eCommerce.utility.USConstants;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.websocket.server.PathParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.security.Principal;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.UUID;
 
 
 @Controller
@@ -79,23 +77,23 @@ public class HomeController {
 	@Autowired
 	private OrderService orderService;
 
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
 
-	@RequestMapping("/login")
+	@GetMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("classActiveLogin", true);
 		return "myAccount";
 	}
-	
-	@RequestMapping("/faq")
+
+	@GetMapping("/faq")
 	public String faq() {
 		return "faq";
 	}
-	
-	@RequestMapping("/bookshelf")
+
+	@GetMapping("/bookshelf")
 	public String bookshelf(Model model, Principal principal) {
 		
 		if(principal != null) {
@@ -110,8 +108,8 @@ public class HomeController {
 		
 		return "bookshelf";
 	}
-	
-	@RequestMapping("/bookDetail")
+
+	@GetMapping("/bookDetail")
 	public String bookDetail(
 			@PathParam("id") Long id, Model model, Principal principal
 			) {
@@ -133,7 +131,7 @@ public class HomeController {
 		return "bookDetail";
 	}
 
-	@RequestMapping("/forgetPassword")
+	@GetMapping("/forgetPassword")
 	public String forgetPassword(
 			HttpServletRequest request,
 			@ModelAttribute("email") String email,
@@ -170,8 +168,8 @@ public class HomeController {
 		
 		return "myAccount";
 	}
-	
-	@RequestMapping("/myProfile")
+
+	@GetMapping("/myProfile")
 	public String myProfile(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
 		model.addAttribute("user", user);
@@ -192,8 +190,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping("/listOfCreditCards")
+
+	@GetMapping("/listOfCreditCards")
 	public String listOfCreditCards(
 			Model model, Principal principal, HttpServletRequest request
 			) {
@@ -209,8 +207,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping("/listOfShippingAddresses")
+
+	@GetMapping("/listOfShippingAddresses")
 	public String listOfShippingAddresses(
 			Model model, Principal principal, HttpServletRequest request
 			) {
@@ -226,8 +224,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping("/addNewCreditCard")
+
+	@GetMapping("/addNewCreditCard")
 	public String addNewCreditCard(
 			Model model, Principal principal
 			){
@@ -254,8 +252,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping("/addNewShippingAddress")
+
+	@GetMapping("/addNewShippingAddress")
 	public String addNewShippingAddress(
 			Model model, Principal principal
 			){
@@ -279,8 +277,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping(value="/addNewCreditCard", method=RequestMethod.POST)
+
+	@PostMapping(value = "/addNewCreditCard")
 	public String addNewCreditCard(
 			@ModelAttribute("userPayment") UserPayment userPayment,
 			@ModelAttribute("userBilling") UserBilling userBilling,
@@ -299,8 +297,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping(value="/addNewShippingAddress", method=RequestMethod.POST)
+
+	@PostMapping(value = "/addNewShippingAddress")
 	public String addNewShippingAddressPost(
 			@ModelAttribute("userShipping") UserShipping userShipping,
 			Principal principal, Model model
@@ -318,9 +316,9 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	
-	@RequestMapping("/updateCreditCard")
+
+
+	@GetMapping("/updateCreditCard")
 	public String updateCreditCard(
 			@ModelAttribute("id") Long creditCardId, Principal principal, Model model
 			) {
@@ -350,8 +348,8 @@ public class HomeController {
 			return "myProfile";
 		}
 	}
-	
-	@RequestMapping("/updateUserShipping")
+
+	@GetMapping("/updateUserShipping")
 	public String updateUserShipping(
 			@ModelAttribute("id") Long shippingAddressId, Principal principal, Model model
 			) {
@@ -380,8 +378,8 @@ public class HomeController {
 			return "myProfile";
 		}
 	}
-	
-	@RequestMapping(value="/setDefaultPayment", method=RequestMethod.POST)
+
+	@PostMapping(value = "/setDefaultPayment")
 	public String setDefaultPayment(
 			@ModelAttribute("defaultUserPaymentId") Long defaultPaymentId, Principal principal, Model model
 			) {
@@ -399,8 +397,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping(value="/setDefaultShippingAddress", method=RequestMethod.POST)
+
+	@PostMapping(value = "/setDefaultShippingAddress")
 	public String setDefaultShippingAddress(
 			@ModelAttribute("defaultShippingAddressId") Long defaultShippingId, Principal principal, Model model
 			) {
@@ -418,8 +416,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping("/removeCreditCard")
+
+	@GetMapping("/removeCreditCard")
 	public String removeCreditCard(
 			@ModelAttribute("id") Long creditCardId, Principal principal, Model model
 			){
@@ -443,8 +441,8 @@ public class HomeController {
 			return "myProfile";
 		}
 	}
-	
-	@RequestMapping("/removeUserShipping")
+
+	@GetMapping("/removeUserShipping")
 	public String removeUserShipping(
 			@ModelAttribute("id") Long userShippingId, Principal principal, Model model
 			){
@@ -468,8 +466,8 @@ public class HomeController {
 			return "myProfile";
 		}
 	}
-	
-	@RequestMapping(value="/newUser", method = RequestMethod.POST)
+
+	@PostMapping(value = "/newUser")
 	public String newUserPost(
 			HttpServletRequest request,
 			@ModelAttribute("email") String userEmail,
@@ -522,9 +520,9 @@ public class HomeController {
 		
 		return "myAccount";
 	}
-	
 
-	@RequestMapping("/newUser")
+
+	@GetMapping("/newUser")
 	public String newUser(Locale locale, @RequestParam("token") String token, Model model) {
 		PasswordResetToken passToken = userService.getPasswordResetToken(token);
 
@@ -550,8 +548,8 @@ public class HomeController {
 		model.addAttribute("orderList", user.getOrderList());
 		return "myProfile";
 	}
-	
-	@RequestMapping(value="/updateUserInfo", method=RequestMethod.POST)
+
+	@PostMapping(value = "/updateUserInfo")
 	public String updateUserInfo(
 			@ModelAttribute("user") User user,
 			@ModelAttribute("newPassword") String newPassword,
@@ -613,8 +611,8 @@ public class HomeController {
 		
 		return "myProfile";
 	}
-	
-	@RequestMapping("/orderDetail")
+
+	@GetMapping("/orderDetail")
 	public String orderDetail(
 			@RequestParam("id") Long orderId,
 			Principal principal, Model model
