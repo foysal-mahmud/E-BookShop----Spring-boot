@@ -1,7 +1,24 @@
 # E-Commerce
 Complete E-Commerce Project using Spring, Hibernate, Bootstrap &amp; MySQL
 
-## Project Demo video : https://foysal-mahmud.github.io/cv/#project 
+> [!WARNING]  
+> **Note Regarding This Project:**
+>
+> It has been a long time (3+ years) since I transitioned to JavaScript, and I have mostly forgotten a lot of things about Spring Boot. As a result, it is now very difficult for me to answer project-related questions regarding this technology.
+
+> [!TIP]  
+> There are two separate projects in this repository:  
+> - <span style="color: blue;">**🔮 Admin Panel**</span>  
+> - <span style="color: blue;">**🍄 Main Ecommerce**</span>
+>
+> Download the repository and move the projects to different folders to run them separately.
+> 📹 You can find video demo of this 2 projects in "𝐷𝑒𝑚𝑜 𝑉𝑖𝑑𝑒𝑜" folder.
+
+<h1 align="center" style="font-size: 72px; color: #FFA500; text-shadow: 2px 2px 4px #000000;">🎉 Thank You! 🎉</h1>
+
+<br />
+
+## Project Demo video : In "Demo Video" folder
 
 ## Home Page:
 ![Project Snapsort1](https://github.com/foysal-mahmud/E-Commerce/blob/master/screensort/ebook1.png) 
